@@ -66,7 +66,7 @@ class UnitoniRemoteDataSource {
           if (response.data is List) {
             return mapper(response.data);
           }
-          if (response.data['status'] == false) {
+          if (response.data['status'] != 'ok') {
             throw ServerFailure(response.data["message"]);
           }
           return mapper(response.data);
@@ -79,7 +79,7 @@ class UnitoniRemoteDataSource {
           if (response.data is List) {
             return BaseResponseModel.fromJson(response.data, mapper);
           }
-          if (response.data['status'] == false) {
+          if (response.data['status'] != 'ok') {
             throw ServerFailure(response.data["message"]);
           }
           return BaseResponseModel.fromJson(response.data, mapper);

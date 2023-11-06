@@ -3,6 +3,7 @@ import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import '../../../../core/utilities/end_points.dart';
 import '../../../../core/utilities/enums.dart';
+import '../../../../features/home/model/news_list_model.dart';
 import 'app_datasource.dart';
 
 class AppDataSourceImpl extends AppDataSource {
@@ -11,15 +12,15 @@ class AppDataSourceImpl extends AppDataSource {
     required Dio client,
   }) : super(client: client);
 
-  // @override
-  // Future<UserInformationModel?> registerUser(
-  //         {required RegisterUserParams params}) =>
-  //     request(
-  //       method: METHOD.POST,
-  //       endpoint: EndPoints.registerUser,
-  //       data: params.toJson(),
-  //       mapper: UserInformationModel.fromJson,
-  //       withAuth: prefsRepository.accessToken != null,
-  //     );
+  @override
+  Future<NewsListModel?> getNews(
+      {required String params}) =>
+      request(
+        method: METHOD.GET,
+        endpoint: EndPoints.getNews(params),
+        //data: params.toJson(),
+        mapper: NewsListModel.fromJson,
+        withAuth: false,
+      );
 
 }

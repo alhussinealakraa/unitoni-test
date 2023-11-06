@@ -23,18 +23,26 @@ class SecondListWidget extends StatelessWidget {
         Padding(
           padding:
           const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-          child: ListView.separated(
-            shrinkWrap: true,
-            itemCount: 4,
-            itemBuilder: (context, index) {
-              return ListItem();
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                height: 25.h,
-              );
-            },
-          ),
+          child: controller.obx(
+                  (state) =>
+                  ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: controller.secondNews.length,
+                    itemBuilder: (context, index) {
+                      return ListItem(
+                        item: controller.secondNews[index],
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) {
+                      return SizedBox(
+                        height: 25.h,
+                      );
+                    },
+                  ),
+              onLoading: const CircularProgressIndicator(
+                color: Colors.blue,
+              )
+          )
         ),
 
       ],

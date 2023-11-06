@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import '../../../../core/data/datasource/unitoni_remote_data_source.dart';
+import '../../../../features/home/model/news_list_model.dart';
 
 
 abstract class AppDataSource extends UnitoniRemoteDataSource {
@@ -7,7 +8,7 @@ abstract class AppDataSource extends UnitoniRemoteDataSource {
     required Dio client,
   }) : super(client: client);
 
-  // Future<UserInformationModel?> registerUser(
-  //     {required RegisterUserParams params});
+  Future<NewsListModel?> getNews(
+      {required String params});
 
 }

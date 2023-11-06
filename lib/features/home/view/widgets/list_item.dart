@@ -2,9 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
+import 'package:unitoni/features/home/model/news_list_model.dart';
 
 class ListItem extends StatelessWidget {
-  const ListItem({super.key});
+  const ListItem({required this.item, super.key});
+  final ArticleModel item;
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +35,10 @@ class ListItem extends StatelessWidget {
                   width: 72.w,
                   height: 72.h,
                   decoration: BoxDecoration(
-                    // image: DecorationImage(
-                    //   image: NetworkImage(controller
-                    //       .clinics[index].imagePath),
-                    //   fit: BoxFit.cover,
-                    // ),
+                    image: DecorationImage(
+                      image: NetworkImage(item.urlToImage),
+                      fit: BoxFit.cover,
+                    ),
                     borderRadius: const BorderRadius.all(
                         Radius.elliptical(9999.0, 9999.0)),
                     boxShadow: const [
@@ -58,11 +60,12 @@ class ListItem extends StatelessWidget {
                   MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      'controller.clinics[index].name',
+                      item.title,
                       style: context.textTheme.titleLarge,
                     ),
                     Text(
-                      '12-10-2020',
+                      DateFormat('dd-MM-yyyy').parse(
+                      item.publishedAt).toString(),
                       style: context.textTheme.titleSmall?.copyWith(
                           color: Colors.grey
                       ),

@@ -38,11 +38,14 @@ class SearchFieldsWidget extends StatelessWidget {
               didHasFocusedBorder: false,
               didHasBorder: false,
               hasUnderLineBorder: false,
-              //textEditingController: controller.searchController,
+              textEditingController: controller.firstSearchController,
               hintText: S.of(context).searchForFirstList,
               suffixIcon:
               const Icon(CupertinoIcons.search, color: Colors.black),
               isSuffixIcon: true,
+                onChanged: (val){
+                  controller.getNewsForFirstList();
+                }
             ),
           ),
         ),
@@ -69,11 +72,15 @@ class SearchFieldsWidget extends StatelessWidget {
               didHasFocusedBorder: false,
               didHasBorder: false,
               hasUnderLineBorder: false,
-              //textEditingController: controller.searchController,
+              textEditingController: controller.secondSearchController,
               hintText: S.of(context).searchForSecondList,
               suffixIcon:
               const Icon(CupertinoIcons.search, color: Colors.black),
               isSuffixIcon: true,
+                onChanged: (val){
+                  controller.getNewsForSecondList();
+                }
+
             ),
           ),
         ),

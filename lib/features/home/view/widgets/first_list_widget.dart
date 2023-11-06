@@ -21,11 +21,15 @@ class FirstListWidget extends StatelessWidget {
                Padding(
                 padding:
                 const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                child: ListView.separated(
+                child: controller.obx(
+                  (state) =>
+                ListView.separated(
                   shrinkWrap: true,
-                  itemCount: 4,
+                  itemCount: controller.firstNews.length,
                   itemBuilder: (context, index) {
-                    return ListItem();
+                    return ListItem(
+                      item: controller.firstNews[index],
+                    );
                   },
                   separatorBuilder: (BuildContext context, int index) {
                     return SizedBox(
@@ -33,6 +37,10 @@ class FirstListWidget extends StatelessWidget {
                     );
                   },
                 ),
+                  onLoading: const CircularProgressIndicator(
+                    color: Colors.blue,
+                  )
+                )
               ),
 
       ],
