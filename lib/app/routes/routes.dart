@@ -2,6 +2,8 @@
 
 import 'package:get/get.dart';
 
+import '../../features/home/view/home_page.dart';
+
 class GetRouter {
   static List<GetPage> getPages = [
     GetPage(

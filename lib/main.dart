@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
+import 'app/app.dart';
 import 'app/app_module/app_module.dart';
 import 'app/controllers/app_base_view_controller.dart';
 import 'app/data/datasource/remote_data_source/app_data_source_impl.dart';
@@ -38,13 +39,9 @@ Future<void> main() async {
   AppBaseViewController appViewController =
   Get.put(AppBaseViewController(), permanent: true);
 
-  runZonedGuarded(() async {
-    bool isRegistered = Get.isRegistered<AppBaseViewController>();
-    if (isRegistered) {
-      // await appViewController.getApplicationConfig();
-    }
+
     runApp(
          MyApp(baseController: appViewController));
-  }, (error, stack) => print('$error'));
+
 }
 

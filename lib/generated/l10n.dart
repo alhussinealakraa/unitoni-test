@@ -69,6 +69,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Search For First List`
+  String get searchForFirstList {
+    return Intl.message(
+      'Search For First List',
+      name: 'searchForFirstList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search For Second List`
+  String get searchForSecondList {
+    return Intl.message(
+      'Search For Second List',
+      name: 'searchForSecondList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unitoni News`
+  String get unitoniNews {
+    return Intl.message(
+      'Unitoni News',
+      name: 'unitoniNews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First List`
+  String get firstList {
+    return Intl.message(
+      'First List',
+      name: 'firstList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Second List`
+  String get secondList {
+    return Intl.message(
+      'Second List',
+      name: 'secondList',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

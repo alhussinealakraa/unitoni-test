@@ -22,8 +22,15 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "firstList": MessageLookupByLibrary.simpleMessage("First List"),
         "noInternet":
             MessageLookupByLibrary.simpleMessage("No Internet Connection"),
-        "tryAgain": MessageLookupByLibrary.simpleMessage("Try again")
+        "searchForFirstList":
+            MessageLookupByLibrary.simpleMessage("Search For First List"),
+        "searchForSecondList":
+            MessageLookupByLibrary.simpleMessage("Search For Second List"),
+        "secondList": MessageLookupByLibrary.simpleMessage("Second List"),
+        "tryAgain": MessageLookupByLibrary.simpleMessage("Try again"),
+        "unitoniNews": MessageLookupByLibrary.simpleMessage("Unitoni News")
       };
 }

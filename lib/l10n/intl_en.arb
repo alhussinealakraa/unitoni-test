@@ -1,4 +1,9 @@
 {
   "noInternet": "No Internet Connection",
-  "tryAgain": "Try again"
+  "tryAgain": "Try again",
+  "searchForFirstList": "Search For First List",
+  "searchForSecondList": "Search For Second List",
+  "unitoniNews": "Unitoni News",
+  "firstList": "First List",
+  "secondList": "Second List"
 }
